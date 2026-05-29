@@ -12,11 +12,25 @@ html {
 }
 
 body {
-  background: #090909;
+  background: #070707;
   color: white;
   font-family: "Rajdhani", sans-serif;
   overflow-x: hidden;
   min-height: 100%;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, #d6b97a10, transparent 40%),
+    radial-gradient(circle at 80% 70%, #8b111115, transparent 45%),
+    radial-gradient(circle at 50% 50%, #ffffff05, transparent 60%);
+  filter: blur(40px) saturate(1.2);
+  opacity: 1;
+  z-index: -3;
+  animation: atmosferapulsar 18s infinite ease-in-out;
 }
 
 .background {
@@ -24,78 +38,114 @@ body {
   height: 100%;
   width: 100%;
   background:
-    radial-gradient(circle at 18% 22%, #d6b97a26, transparent 32%),
-    radial-gradient(circle at 82% 78%, #8b111126, transparent 35%),
-    linear-gradient(115deg, #050505, #101010 42%, #060606);
+    radial-gradient(circle at 15% 20%, #d6b97a25, transparent 38%),
+    radial-gradient(circle at 85% 80%, #8b111130, transparent 42%),
+    radial-gradient(circle at 50% 50%, #ffffff0a, transparent 60%),
+    linear-gradient(120deg, #050505, #0e0e0e 40%, #060606);
   z-index: -2;
   overflow: hidden;
   will-change: transform;
-  animation: moverfundo 11s infinite alternate ease-in-out;
+  animation:
+    moverfundo 16s infinite alternate ease-in-out,
+    huefundo 22s infinite linear;
 }
 
 .background::before {
   content: "";
   position: absolute;
-  top: -20%;
-  left: -20%;
-  right: -20%;
-  bottom: -20%;
+  top: -30%;
+  left: -30%;
+  right: -30%;
+  bottom: -30%;
   background:
     repeating-linear-gradient(
       115deg,
-      transparent 0 38px,
-      #ffffff07 39px 41px,
-      transparent 42px 84px
+      transparent 0 42px,
+      #ffffff06 43px 45px,
+      transparent 46px 90px
     ),
-    linear-gradient(100deg, transparent 32%, #d6b97a20 48%, transparent 63%);
-  opacity: 0.58;
+    radial-gradient(circle at 30% 30%, #d6b97a22, transparent 65%),
+    radial-gradient(circle at 70% 70%, #8b111122, transparent 65%);
+  opacity: 0.8;
+  filter: blur(0.4px);
   will-change: transform;
-  animation: luzpassando 10s infinite linear;
+  animation: luzpassando 18s infinite linear;
 }
 
 .background::after {
   content: "";
   position: absolute;
-  inset: -30%;
+  inset: -40%;
   background:
     radial-gradient(
       circle at 50% 50%,
-      transparent 0 24%,
-      #00000055 58%,
-      #000000d8 100%
+      transparent 0 35%,
+      #000000cc 75%,
+      #000000f5 100%
     ),
-    linear-gradient(90deg, transparent, #c7a76a12, transparent);
+    conic-gradient(
+      from 180deg,
+      transparent,
+      #c7a76a10,
+      transparent,
+      #8b11110a,
+      transparent
+    );
   transform: rotate(-8deg);
   will-change: opacity, transform;
-  animation: respirarfundo 8s infinite alternate ease-in-out;
+  animation: respirarfundo 12s infinite alternate ease-in-out;
 }
 
 @keyframes moverfundo {
   from {
-    transform: scale(1) translate3d(-9px, -7px, 0);
+    transform: scale(1) translate3d(-12px, -10px, 0);
   }
   to {
-    transform: scale(1.09) translate3d(13px, 10px, 0);
+    transform: scale(1.08) translate3d(16px, 14px, 0);
   }
 }
 
 @keyframes luzpassando {
   from {
-    transform: translateX(-18%) skewX(-8deg);
+    transform: translateX(-30%) skewX(-10deg);
   }
   to {
-    transform: translateX(18%) skewX(-8deg);
+    transform: translateX(30%) skewX(-10deg);
   }
 }
 
 @keyframes respirarfundo {
   0% {
-    opacity: 0.45;
+    opacity: 0.5;
     transform: rotate(-8deg) scale(1);
   }
   100% {
-    opacity: 0.82;
-    transform: rotate(-8deg) scale(1.08);
+    opacity: 0.9;
+    transform: rotate(-8deg) scale(1.12);
+  }
+}
+
+@keyframes huefundo {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(18deg);
+  }
+}
+
+@keyframes atmosferapulsar {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
   }
 }
 
@@ -124,7 +174,7 @@ body {
 .loaderimg {
   width: 71px;
   height: auto;
-  filter: drop-shadow(0 0 10px rgba(199, 167, 106, 0.7));
+  filter: drop-shadow(0 0 14px rgba(199, 167, 106, 0.9));
 }
 
 .loaderlogo {
@@ -133,8 +183,9 @@ body {
   color: #d2b178;
   letter-spacing: 7px;
   text-shadow:
-    0 0 8px #d2b178,
-    0 0 22px #c7a76a;
+    0 0 10px #d2b178,
+    0 0 28px #c7a76a,
+    0 0 42px #c7a76a66;
   animation: pulsoneon 1.4s infinite alternate ease-in-out;
 }
 
@@ -185,8 +236,9 @@ header {
   color: #d2b178;
   text-decoration: none;
   text-shadow:
-    0 0 8px #d2b178,
-    0 0 18px #c7a76a;
+    0 0 10px #d2b178,
+    0 0 28px #c7a76a,
+    0 0 55px #c7a76a33;
   animation: pulsoneon 1.8s infinite alternate ease-in-out;
 }
 
@@ -309,8 +361,8 @@ nav a:hover::after {
   margin: 21px 0 19px;
   color: #fff;
   text-shadow:
-    0 0 10px #ffffff66,
-    0 0 35px #d6b97a88;
+    0 0 14px #ffffff66,
+    0 0 45px #d6b97a88;
   animation: brilhotitulo 2s infinite alternate ease-in-out;
 }
 
@@ -515,6 +567,7 @@ section {
 
 .botaolegado:hover {
   transform: scale(1.08);
+  box-shadow: 0 0 25px #c7a76a55;
 }
 
 @keyframes pulsar {
@@ -580,7 +633,7 @@ section {
 .modelocartao:hover {
   border-color: #c7a76a;
   transform: translateY(-12px);
-  box-shadow: 0 0 28px #c7a76a33;
+  box-shadow: 0 0 30px #c7a76a33;
 }
 
 .modelocartao img {
@@ -719,8 +772,9 @@ footer h2 {
   color: #d6b97a;
   letter-spacing: 5px;
   text-shadow:
-    0 0 8px #d6b97a,
-    0 0 25px #c7a76a;
+    0 0 10px #d6b97a,
+    0 0 30px #c7a76a,
+    0 0 60px #c7a76a33;
   animation: pulsoneon 1.8s infinite alternate ease-in-out;
 }
 
@@ -889,15 +943,15 @@ footer p {
 @keyframes pulsoneon {
   from {
     text-shadow:
-      0 0 6px #d2b178,
+      0 0 8px #d2b178,
       0 0 18px #c7a76a;
-    opacity: 0.82;
+    opacity: 0.85;
   }
   to {
     text-shadow:
-      0 0 12px #fff0bd,
-      0 0 32px #d6b97a,
-      0 0 55px #c7a76a;
+      0 0 14px #fff0bd,
+      0 0 40px #d6b97a,
+      0 0 70px #c7a76a;
     opacity: 1;
   }
 }
@@ -905,13 +959,13 @@ footer p {
 @keyframes brilhotitulo {
   from {
     text-shadow:
-      0 0 8px #ffffff66,
-      0 0 24px #d6b97a55;
+      0 0 10px #ffffff66,
+      0 0 30px #d6b97a55;
   }
   to {
     text-shadow:
-      0 0 16px #fff,
-      0 0 42px #d6b97aaa;
+      0 0 20px #fff,
+      0 0 60px #d6b97aaa;
   }
 }
 
