@@ -79,7 +79,7 @@ Além dos requisitos principais, o projeto também inclui:
 ## Projeto Online
 
 Acesse aqui:  
-https://guilherm-xd.github.io/porsche/#historia
+https://guilherm-xd.github.io/porsche/
 
 ---
 
