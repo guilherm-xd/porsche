@@ -131,4 +131,4 @@ Durante o desenvolvimento deste projeto foi possível aprender:
 
 ## Autor
 
-* Guilherme Miranda Murillo
+<img src="https://avatars.githubusercontent.com/u/68977822?v=4" width="24" align="absmiddle"> [Guilherme Miranda Murillo](https://github.com/guilherm-xd)
